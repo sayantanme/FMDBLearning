@@ -17,9 +17,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.databaseName = @"TestDb.sqlite";
+    NSArray *documentsPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = documentsPath[0];
+    self.databasePath = [documentDir stringByAppendingPathComponent:self.databaseName];
+    [self createAndCheckDatabase];
     return YES;
 }
 
+-(void) createAndCheckDatabase
+{
+    BOOL success;
+    NSFileManager *fManager = [NSFileManager defaultManager];
+    success = [fManager fileExistsAtPath:self.databasePath];
+    if(success) return;
+    NSString *dtabasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseName];
+    NSError *error = nil;
+    [fManager copyItemAtPath:dtabasePathFromApp toPath:self.databasePath error:&error];
+    if (error) {
+        NSLog(@"Error:%@",error);
+    }
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AddStudent.h
 //  FMDBLearning
 //
 //  Created by Sayantan Chakraborty on 06/03/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
-
+@interface AddStudent : UIViewController
 
 @end
-
