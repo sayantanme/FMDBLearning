@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oKP-jc-kYb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oKP-jc-kYb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Students-->
@@ -47,7 +48,7 @@
                     <navigationItem key="navigationItem" title="Students" id="Q11-3b-kOa">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qDP-hP-skn">
                             <connections>
-                                <segue destination="mu4-IV-G8c" kind="presentation" id="5i1-kk-Wig"/>
+                                <segue destination="KIL-wB-lDY" kind="presentation" id="5i1-kk-Wig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -68,22 +69,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mll-Yo-T9p">
-                                <rect key="frame" x="25" y="20" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmL-FE-GEO">
+                                <rect key="frame" x="20" y="102" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e3-fZ-qPm">
-                                <rect key="frame" x="533" y="28" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-14-WlG">
+                                <rect key="frame" x="532" y="102" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJJ-mH-FcJ">
+                                <rect key="frame" x="532" y="102" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nJJ-mH-FcJ" firstAttribute="leading" secondItem="Aha-14-WlG" secondAttribute="leading" id="7bD-CH-PmR"/>
+                            <constraint firstItem="OmL-FE-GEO" firstAttribute="top" secondItem="Pyf-Yf-lNH" secondAttribute="bottom" constant="38" id="Ke7-nV-a4a"/>
+                            <constraint firstItem="OmL-FE-GEO" firstAttribute="baseline" secondItem="Aha-14-WlG" secondAttribute="baseline" id="Sp2-GZ-snJ"/>
+                            <constraint firstItem="nJJ-mH-FcJ" firstAttribute="trailing" secondItem="hSQ-Id-eAP" secondAttribute="trailingMargin" id="eFL-y3-cYc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="OmL-FE-GEO" secondAttribute="leading" id="m9M-6p-Lor"/>
+                            <constraint firstItem="OmL-FE-GEO" firstAttribute="baseline" secondItem="nJJ-mH-FcJ" secondAttribute="baseline" id="sDo-ug-c48"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mji-2Q-q32"/>
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBn-Hk-L2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="303"/>
+            <point key="canvasLocation" x="2468" y="303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E7J-Cz-COe">
@@ -102,6 +116,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIw-Eb-tyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="325" y="296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2hz-7C-zHz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KIL-wB-lDY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RaT-Rr-3FR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mu4-IV-G8c" kind="relationship" relationship="rootViewController" id="Vb7-KA-8yl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfe-P3-3Fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656" y="303"/>
         </scene>
     </scenes>
 </document>
